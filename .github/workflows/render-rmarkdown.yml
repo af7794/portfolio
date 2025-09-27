@@ -24,10 +24,10 @@ jobs:
 
     - name: Install dependencies
       run: |
-        Rscript -e 'install.packages("knitr, repos="https://cloud.r-project.org")'
-        Rscript -e 'install.packages("rmarkdown, repos="https://cloud.r-project.org")'
-        Rscript -e 'install.packages("remotes", repos="https://cloud.r-project.org")'
-        Rscript -e 'remotes::install_github("rstudio/rmarkdown")'
+        Rscript -e "install.packages('knitr, repos="https://cloud.r-project.org')"
+        Rscript -e "install.packages('rmarkdown, repos="https://cloud.r-project.org')"
+        Rscript -e "install.packages('remotes, repos="https://cloud.r-project.org')"
+        Rscript -e "remotes::install_github('rstudio/rmarkdown')"
 
 
     - name: Render site
