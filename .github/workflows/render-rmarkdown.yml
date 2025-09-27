@@ -24,7 +24,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        Rscript -e 'install.packages("rmarkdown", repos="https://cloud.r-project.org")'
+        Rscript -e 'install.packages(c("rmarkdown", "knitr), repos="https://cloud.r-project.org")'
         Rscript -e 'install.packages("remotes", repos="https://cloud.r-project.org")'
         Rscript -e 'remotes::install_github("rstudio/rmarkdown")'
 
