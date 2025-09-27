@@ -24,9 +24,9 @@ jobs:
 
     - name: Install dependencies
       run: |
-        install.packages('rmarkdown')
-        install.packages('knitr')
-        install.packages('tidyverse')
+        Rscript -e 'install.packages('rmarkdown')'
+        Rscript -e 'install.packages('knitr')'
+        Rscript -e 'install.packages('tidyverse')'
 
     - name: Render site
       run: Rscript -e 'rmarkdown::render_site()'
