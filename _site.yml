@@ -1,5 +1,6 @@
 output:
   html_document:
+    includes:
+      before_body: _includes/sidebar.html
     theme: cosmo
-    toc: true
-    toc_float: true
+
