@@ -1,0 +1,37 @@
+name: Render R Markdown Site
+
+on:
+  push:
+    branches:
+      - main    # or your default branch
+    paths:
+      - '**.Rmd'
+      - '_site.yml'
+
+jobs:
+  render-site:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up R
+      uses: r-lib/actions/setup-r@v2
+      with:
+        r-version: '4.3.1'  # choose your R version
+
+    - name: Install dependencies
+      run: |
+        install.packages('rmarkdown')
+        install.packages('knitr')
+        install.packages('tidyverse')
+
+    - name: Render site
+      run: Rscript -e 'rmarkdown::render_site()'
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v6
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./_site  # this is the folder created by render_site()
