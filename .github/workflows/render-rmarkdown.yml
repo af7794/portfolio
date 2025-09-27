@@ -24,9 +24,10 @@ jobs:
 
     - name: Install dependencies
       run: |
-        Rscript -e 'install.packages('rmarkdown')'
-        Rscript -e 'install.packages('knitr')'
-        Rscript -e 'install.packages('tidyverse')'
+        Rscript -e 'install.packages("rmarkdown", repos="https://cloud.r-project.org")'
+        Rscript -e 'install.packages("remotes", repos="https://cloud.r-project.org")'
+        Rscript -e 'remotes::install_github("rstudio/rmarkdown")'
+
 
     - name: Render site
       run: Rscript -e 'rmarkdown::render_site()'
