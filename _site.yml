@@ -1,7 +1,6 @@
+name: "Portfolio Site"
+output_dir: "_site"
 output:
   html_document:
     includes:
       before_body: _includes/sidebar.html
-    #theme: cosmo
-
-
