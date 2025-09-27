@@ -35,3 +35,5 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./_site  # this is the folder created by render_site()
+        publish_branch: main # publish to main
+        publish_path: docs   # put contents in /docs
