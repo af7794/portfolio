@@ -35,11 +35,3 @@ jobs:
 
     - name: Render site
       run: Rscript -e 'rmarkdown::render_site()'
-
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v4.0.0
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./_site  # this is the folder created by render_site()
-        publish_branch: main # publish to main
-        destination_dir: docs   # copy into /docs instead of root
