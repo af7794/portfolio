@@ -34,7 +34,7 @@ jobs:
 
 
     - name: Render site
-      run: Rscript -e rmarkdown::render_site(output = "docs")
+      run: Rscript -e 'rmarkdown::render_site(output_dir = "docs")'
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4.0.0
