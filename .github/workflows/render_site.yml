@@ -48,4 +48,4 @@ jobs:
 
     # 7. Render the site into /docs
     - name: Render site
-      run: Rscript -e 'rmarkdown::render_site()'
+      run: Rscript -e 'rmarkdown::render_site(encoding = "UTF-8", clean = TRUE)'
