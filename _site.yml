@@ -1,8 +1,9 @@
 name: "Portfolio Site"
-output_dir: "_site"
+output_dir: "docs"
 output:
   html_document:
     includes:
-      ##before_body: _includes/sidebar.html
+      before_body: _includes/sidebar.html
+
 
 
